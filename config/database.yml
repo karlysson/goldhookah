@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: postgres
+  user: postgres
+
+development:
+  <<: *default
+  database: goldhookah_development
+
+test:
+  <<: *default
+  database: goldhookah_test
+
+production:
+  <<: *default
+  database: goldhookah_production
+  username: goldhookah
+  password: <%= ENV['GOLDHOOKAH_DATABASE_PASSWORD'] %>

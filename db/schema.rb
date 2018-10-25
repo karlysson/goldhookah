@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181025190941) do
+ActiveRecord::Schema.define(version: 20181025202505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "client_events", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "client_id"
+    t.integer  "payment_method_id"
+    t.integer  "ticket_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["client_id"], name: "index_client_events_on_client_id", using: :btree
+    t.index ["event_id"], name: "index_client_events_on_event_id", using: :btree
+    t.index ["payment_method_id"], name: "index_client_events_on_payment_method_id", using: :btree
+    t.index ["ticket_id"], name: "index_client_events_on_ticket_id", using: :btree
+  end
 
   create_table "clients", force: :cascade do |t|
     t.string   "name"
@@ -58,4 +71,8 @@ ActiveRecord::Schema.define(version: 20181025190941) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "client_events", "clients"
+  add_foreign_key "client_events", "events"
+  add_foreign_key "client_events", "payment_methods"
+  add_foreign_key "client_events", "tickets"
 end

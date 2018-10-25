@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @client_event.event %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @client_event.client %>
+</p>
+
+<p>
+  <strong>Payment method:</strong>
+  <%= @client_event.payment_method %>
+</p>
+
+<p>
+  <strong>Ticket:</strong>
+  <%= @client_event.ticket %>
+</p>
+
+<%= link_to 'Edit', edit_client_event_path(@client_event) %> |
+<%= link_to 'Back', client_events_path %>

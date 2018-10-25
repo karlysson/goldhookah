@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Client Events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Client</th>
+      <th>Payment method</th>
+      <th>Ticket</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @client_events.each do |client_event| %>
+      <tr>
+        <td><%= client_event.event %></td>
+        <td><%= client_event.client %></td>
+        <td><%= client_event.payment_method %></td>
+        <td><%= client_event.ticket %></td>
+        <td><%= link_to 'Show', client_event %></td>
+        <td><%= link_to 'Edit', edit_client_event_path(client_event) %></td>
+        <td><%= link_to 'Destroy', client_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Client Event', new_client_event_path %>

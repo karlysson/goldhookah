@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event: one
+  client: one
+  payment_method: one
+  ticket: one
+
+two:
+  event: two
+  client: two
+  payment_method: two
+  ticket: two

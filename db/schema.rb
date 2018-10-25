@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181025202505) do
+ActiveRecord::Schema.define(version: 20181025204732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(version: 20181025202505) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "incidents", force: :cascade do |t|
+    t.string   "description"
+    t.integer  "client_event_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["client_event_id"], name: "index_incidents_on_client_event_id", using: :btree
+  end
+
   create_table "payment_methods", force: :cascade do |t|
     t.string   "description"
     t.datetime "created_at",  null: false
@@ -75,4 +83,5 @@ ActiveRecord::Schema.define(version: 20181025202505) do
   add_foreign_key "client_events", "events"
   add_foreign_key "client_events", "payment_methods"
   add_foreign_key "client_events", "tickets"
+  add_foreign_key "incidents", "client_events"
 end

@@ -1,5 +1,6 @@
 class ClientEventsController < ApplicationController
   before_action :set_client_event, only: [:show, :edit, :update, :destroy]
+  layout "backoffice"
 
   # GET /client_events
   # GET /client_events.json

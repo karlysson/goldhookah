@@ -1,5 +1,6 @@
 class IncidentsController < ApplicationController
   before_action :set_incident, only: [:show, :edit, :update, :destroy]
+  layout "backoffice"
 
   # GET /incidents
   # GET /incidents.json

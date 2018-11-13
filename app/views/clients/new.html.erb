@@ -1,5 +1,30 @@
-<h1>New Client</h1>
+<div class="main-content">
+    <div class="main-content-inner">
+        <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="ace-icon fa fa-home home-icon"></i>
+                    <a href="/">Home</a>
+                </li>
+                <li class="active">Clients</li>
+            </ul>
+            <!-- /.breadcrumb -->
+        </div>
 
-<%= render 'form', client: @client %>
+        <div class="page-content">
+            <div class="page-header">
+                <h1> Clients
+                    <small>
+                        <i class="ace-icon fa fa-angle-double-right"></i> New Client
+                    </small>
+                </h1>
+            </div>
+            <!-- /.page-header -->
 
-<%= link_to 'Back', clients_path %>
+            <%= render 'form', client: @client %>
+
+
+        </div>
+
+    </div>
+</div>    

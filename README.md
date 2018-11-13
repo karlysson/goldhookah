@@ -6,7 +6,7 @@
 This application is an administrative system to control the entry of events.
 Gold hookah is a pub and tobacconist, where music events take place.
 
-![Chat Preview](https://raw.githubusercontent.com/karlysson/goldhookah/master/public/print111.png)
+![Chat Preview](https://raw.githubusercontent.com/karlysson/goldhookah/master/app/assets/images/screen.png)
 
 ## Technology 
 

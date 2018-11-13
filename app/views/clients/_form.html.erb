@@ -1,8 +1,7 @@
-<%= form_for(client) do |f| %>
-  <% if client.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
-
+  
+    <% if client.errors.any? %>
+    <div class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true" >x</button>
       <ul>
       <% client.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,38 +9,70 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="col-xs-6">
+    <div class="widget-box">
+      <div class="widget-header">
+        <h4 class="widget-title"></h4>
+      </div>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+      <div class="widget-body">
+        <div class="widget-main no-padding">
+          <%= form_for(client) do |f| %>
+            <!-- <legend>Form</legend> -->
+            <fieldset class="col-xs-10">
 
-  <div class="field">
-    <%= f.label :cpf %>
-    <%= f.text_field :cpf %>
-  </div>
+              
+                <label class="col-xs-12" ><%= f.label :name %></label>
+                <%= f.text_field :name %>
 
-  <div class="field">
-    <%= f.label :phone %>
-    <%= f.text_field :phone %>
-  </div>
+                <br>
+                <br>
 
-  <div class="field">
-    <%= f.label :sex %>
-    <%= f.text_field :sex %>
-  </div>
+                <label class="col-xs-12"><%= f.label :cpf %></label>
+                <%= f.text_field :cpf %>
 
-  <div class="field">
-    <%= f.label :birth %>
-    <%= f.text_field :birth %>
-  </div>
+                <br>
+                <br>
 
-  <div class="field">
-    <%= f.label :blocked %>
-    <%= f.text_field :blocked %>
-  </div>
+                <label class="col-xs-12"><%= f.label :birth %></label>
+                <%= f.text_field :birth %>
 
-  <div class="actions">
-    <%= f.submit %>
+              
+                <br>
+                <br>
+
+              
+                <label class="col-xs-12"><%= f.label :phone %></label>
+                <%= f.phone_field :phone %>
+
+                <br>
+                <br>
+
+                <label class="col-xs-12"><%= f.label :sex %></label>
+                <%= f.select :sex, ['Masculino', 'Feminino'] %>
+
+                <br>
+                <br>
+
+                <label class="col-xs-12"><%= f.label :blocked %></label>
+                <%= f.select :blocked, ['Não', 'Sim'] %>
+
+              
+
+            </fieldset>
+
+            <div class="form-actions center">
+              <button class="btn btn-danger" type="button" onclick="location.href='/clients'">
+                  <i class="ace-icon fa fa-undo bigger-110"></i>Cancel
+              </button>
+              <input type="submit" name="commit" value="Confirm" class="btn btn-info">
+            </div>
+
+
+
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-<% end %>

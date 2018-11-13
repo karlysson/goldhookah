@@ -66,6 +66,9 @@ The main features of the application are;
 ## Links
 
 - Project homepage: 
+  - User: test@goldhookah.com.br
+  - Password: Tes2018@
+
 - Repository: https://github.com/karlysson/goldhookah
   - In case of sensitive bugs like security vulnerabilities, please contact
     karlysson.alves@gmail.com directly instead of using issue tracker. We value your effort

@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <div class="main-content">
     <div class="main-content-inner">
         <div class="breadcrumbs ace-save-state" id="breadcrumbs">
@@ -46,8 +48,8 @@
                                     </th>
 
                                     <th class="sorting" tabindex="0" aria-controls="dynamic-table" rowspan="1" colspan="1"
-                                        aria-label="Update: activate to sort column ascending">
-                                        <i class="ace-icon fa fa-calendar bigger-110 hidden-480"></i> Date
+                                        aria-label="Price: activate to sort column ascending">
+                                        <i class="ace-icon fa fa-credit-card bigger-110 hidden-480"></i>Date
                                     </th>
 
                                     <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="">
@@ -68,6 +70,7 @@
                                     <td>
                                         <%= event.date %>
                                     </td>
+
                                     <td>
                                         <div class="hidden-sm hidden-xs action-buttons">
 
@@ -103,3 +106,32 @@
         </div>
     </div>
 </div>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.date %></td>
+        <td><%= link_to 'Show', event %></td>
+        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event', new_event_path %>
+

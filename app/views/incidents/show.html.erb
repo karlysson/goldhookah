@@ -1,13 +1,69 @@
-<p id="notice"><%= notice %></p>
+<div class="main-content">
+    <div class="main-content-inner">
+        <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="ace-icon fa fa-home home-icon"></i>
+                    <a href="/">Home</a>
+                </li>
+                <li class="active">Incidents</li>
+            </ul>
+            <!-- /.breadcrumb -->
+        </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @incident.description %>
-</p>
+        <p id="notice"><%= notice %></p>
+        <div class="page-content">
+            <div class="page-header">
+                <h1> Incidents
+                    <small>
+                        <i class="ace-icon fa fa-angle-double-right"></i> Visualizando
+                    </small>
+                </h1>
+            </div>
+            <!-- /.page-header -->
 
-<p>
-  <strong>Client event:</strong>
-  <%= @incident.client_event %>
-</p>
+            <div class="row">
+              <div class="col-xs-6">
+                  <br>
+                  		<div class="profile-user-info profile-user-info-striped">
+												<div class="profile-info-row">
+													<div class="profile-info-name"> ID </div>
 
-<%= link_to 'Edit', edit_incident_path(@incident) %> |
+													<div class="profile-info-value">
+														<span class="editable" id="username"><%= @event.id %></span>
+													</div>
+												</div>
+
+												<div class="profile-info-row">
+													<div class="profile-info-name"> Description </div>
+
+													<div class="profile-info-value">
+														<span class="editable" id="country"><%= @incident.description %></span>
+													</div>
+												</div>
+
+												<div class="profile-info-row">
+													<div class="profile-info-name"> Client </div>
+
+													<div class="profile-info-value">
+														<span class="editable" id="age"><%= @incident.client_event %></span>
+													</div>
+												</div>
+
+											</div>
+
+                  <br>
+              </div>
+            </div>
+
+              <div class="row">
+                <button class="btn btn-danger" type="button" onclick="location.href='/incidents'">
+                    <i class="ace-icon fa fa-undo bigger-110"></i>
+                    Black
+                </button>
+              </div>
+
+        </div>
+
+    </div>
+</div>    

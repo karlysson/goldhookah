@@ -1,5 +1,28 @@
-<h1>New Incident</h1>
+<div class="main-content">
+    <div class="main-content-inner">
+        <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="ace-icon fa fa-home home-icon"></i>
+                    <a href="/">Home</a>
+                </li>
+                <li class="active">Incident</li>
+            </ul>
+            <!-- /.breadcrumb -->
+        </div>
 
-<%= render 'form', incident: @incident %>
+        <div class="page-content">
+            <div class="page-header">
+                <h1> Incident
+                    <small>
+                        <i class="ace-icon fa fa-angle-double-right"></i> New Incident
+                    </small>
+                </h1>
+            </div>
+            <!-- /.page-header -->
 
-<%= link_to 'Back', incidents_path %>
+            <%= render 'form', incident: @incident %>
+
+        </div>
+    </div>
+</div>    

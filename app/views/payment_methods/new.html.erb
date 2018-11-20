@@ -1,5 +1,28 @@
-<h1>New Payment Method</h1>
+<div class="main-content">
+    <div class="main-content-inner">
+        <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="ace-icon fa fa-home home-icon"></i>
+                    <a href="/">Home</a>
+                </li>
+                <li class="active">Payment Method</li>
+            </ul>
+            <!-- /.breadcrumb -->
+        </div>
 
-<%= render 'form', payment_method: @payment_method %>
+        <div class="page-content">
+            <div class="page-header">
+                <h1> Payment Method
+                    <small>
+                        <i class="ace-icon fa fa-angle-double-right"></i> New Payment Method
+                    </small>
+                </h1>
+            </div>
+            <!-- /.page-header -->
 
-<%= link_to 'Back', payment_methods_path %>
+            <%= render 'form', payment_method: @payment_method %>
+
+        </div>
+    </div>
+</div>    

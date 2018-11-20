@@ -1,27 +1,98 @@
-<p id="notice"><%= notice %></p>
+<div class="main-content">
+    <div class="main-content-inner">
+        <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="ace-icon fa fa-home home-icon"></i>
+                    <a href="/">Home</a>
+                </li>
+                <li class="active">Payment Methods</li>
+            </ul>
+            <!-- /.breadcrumb -->
+        </div>
 
-<h1>Payment Methods</h1>
+        <div class="page-content">
+            <div class="page-header">
+                <h1> Payment Methods
+                    <small>
+                        <i class="ace-icon fa fa-angle-double-right"></i>List Payment Methods
+                    </small>
+                </h1>
+            </div>
+            <!-- /.page-header -->
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @payment_methods.each do |payment_method| %>
-      <tr>
-        <td><%= payment_method.description %></td>
-        <td><%= link_to 'Show', payment_method %></td>
-        <td><%= link_to 'Edit', edit_payment_method_path(payment_method) %></td>
-        <td><%= link_to 'Destroy', payment_method, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+            <div class="row">
+                <div class="col-xs-12">
 
-<br>
+                    <div class="clearfix">
+                        <div class="pull-right tableTools-container"></div>
+                    </div>
+                    <div class="table-header">Payment Methods</div>
 
-<%= link_to 'New Payment Method', new_payment_method_path %>
+
+                    <!-- div.dataTables_borderWrap -->
+                    <div>
+                        <table id="dynamic-table" class="table table-striped table-bordered table-hover dataTable no-footer"
+                            role="grid" aria-describedby="dynamic-table_info">
+                            <thead>
+                                <tr role="row">
+
+                                    <th class="center">ID</th>
+
+                                    <th class="sorting" tabindex="0" aria-controls="dynamic-table" rowspan="1" colspan="1"
+                                        aria-label="Domain: activate to sort column ascending">
+                                        <i class="ace-icon fa fa-user bigger-110 hidden-480"></i>Description
+                                    </th>
+
+                                    <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="">
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <% @payment_methods.each do |payment_method| %>
+                                <tr role="row" class="odd">
+
+                                    <td class="center">
+                                        <%= payment_method.id %>
+                                    </td>
+                                    <td>
+                                        <%= payment_method.description %>
+                                    </td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs action-buttons">
+
+                                            <%= link_to payment_method, class: "ace-icon fa fa-search-plus bigger-130" do %>
+                                            <% end %>
+
+
+                                            <%= link_to edit_payment_method_path(payment_method), class: " green ace-icon fa fa-pencil bigger-130" do %>
+                                            <% end %>
+
+                                            
+                                            <%= button_to payment_method, method: :delete, data: { confirm: 'Are you sure?' }, class: "red ace-icon fa fa-trash bigger-130" do %>
+                                            <% end %>
+
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                <% end %>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <button class="btn btn-info" type="button" onclick="location.href='/payment_methods/new'">
+                    <i class="ace-icon fa fa-check bigger-110"></i>
+                    New Payment Method
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>

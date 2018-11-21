@@ -1,24 +1,86 @@
-<p id="notice"><%= notice %></p>
+<div class="main-content">
+    <div class="main-content-inner">
+        <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="ace-icon fa fa-home home-icon"></i>
+                    <a href="/">Home</a>
+                </li>
+                <li class="active">Client Event</li>
+            </ul>
+            <!-- /.breadcrumb -->
+        </div>
 
-<p>
-  <strong>Event:</strong>
-  <%= @client_event.event %>
-</p>
+        <div class="page-content">
+            <div class="page-header">
+                <h1> Clients
+                    <small>
+                        <i class="ace-icon fa fa-angle-double-right"></i> Visualizando
+                    </small>
+                </h1>
+            </div>
+            <!-- /.page-header -->
 
-<p>
-  <strong>Client:</strong>
-  <%= @client_event.client %>
-</p>
+            <div class="row">
+              <div class="col-xs-6">
+                  <br>
+                  		<div class="profile-user-info profile-user-info-striped">
+												<div class="profile-info-row">
+													<div class="profile-info-name"> ID </div>
 
-<p>
-  <strong>Payment method:</strong>
-  <%= @client_event.payment_method %>
-</p>
+													<div class="profile-info-value">
+														<span class="editable" id="username"><%= @client_event.id %></span>
+													</div>
+												</div>
 
-<p>
-  <strong>Ticket:</strong>
-  <%= @client_event.ticket %>
-</p>
+												<div class="profile-info-row">
+													<div class="profile-info-name"> Event </div>
 
-<%= link_to 'Edit', edit_client_event_path(@client_event) %> |
-<%= link_to 'Back', client_events_path %>
+													<div class="profile-info-value">
+														<span class="editable" id="country"><%= @client_event.event %></span>
+													</div>
+												</div>
+
+												<div class="profile-info-row">
+													<div class="profile-info-name"> Client </div>
+
+													<div class="profile-info-value">
+														<span class="editable" id="age"><%= @client_event.client %></span>
+													</div>
+												</div>
+
+												<div class="profile-info-row">
+													<div class="profile-info-name"> Payment Method </div>
+
+													<div class="profile-info-value">
+														<span class="editable" id="signup"><%= @client_event.payment_method %></span>
+													</div>
+												</div>
+
+												<div class="profile-info-row">
+													<div class="profile-info-name"> Ticket </div>
+
+													<div class="profile-info-value">
+														<span class="editable" id="login"><%= @client_event.ticket%></span>
+													</div>
+												</div>
+
+											</div>
+
+                  <br>
+
+                  <p id="notice"><%= notice %></p>
+              </div>
+            </div>
+
+              <div class="row">
+                <button class="btn btn-danger" type="button" onclick="location.href='/client_events'">
+                    <i class="ace-icon fa fa-undo bigger-110"></i>
+                    Black
+                </button>
+              </div>
+
+        </div>
+
+    </div>
+</div>    

@@ -1,6 +1,30 @@
-<h1>Editing Client Event</h1>
+<div class="main-content">
+    <div class="main-content-inner">
+        <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="ace-icon fa fa-home home-icon"></i>
+                    <a href="/">Home</a>
+                </li>
+                <li class="active">Client Event</li>
+            </ul>
+            <!-- /.breadcrumb -->
+        </div>
 
-<%= render 'form', client_event: @client_event %>
+        <div class="page-content">
+            <div class="page-header">
+                <h1> Client Event
+                    <small>
+                        <i class="ace-icon fa fa-angle-double-right"></i> Editing Client Event
+                    </small>
+                </h1>
+            </div>
+            <!-- /.page-header -->
 
-<%= link_to 'Show', @client_event %> |
-<%= link_to 'Back', client_events_path %>
+            <%= render 'form', client_event: @client_event %>
+
+
+        </div>
+
+    </div>
+</div>    
